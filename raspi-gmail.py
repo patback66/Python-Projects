@@ -4,16 +4,16 @@ import RPi.GPIO as GPIO, feedparser, time
 import getpass
 DEBUG = 1
 
-#USERNAME = "maskoken"     # just the part before the @ sign, add yours here
+#USERNAME = "maskoken"
 USERNAME = raw_input("Username (ex. username@gmail.com): ")
 PASSWORD = getpass.getpass(prompt="Password: ")
 
-NEWMAIL_OFFSET = 0        # my unread messages never goes to zero, yours might
-MAIL_CHECK_FREQ = 30      # check mail every 60 seconds
+NEWMAIL_OFFSET = 0        # Set your own zero
+MAIL_CHECK_FREQ = 30      # check mail every 30 seconds
 
 GPIO.setmode(GPIO.BCM)
-GREEN_LED = 18
-RED_LED = 23
+GREEN_LED = 23
+RED_LED = 18
 GPIO.setup(GREEN_LED, GPIO.OUT)
 GPIO.setup(RED_LED, GPIO.OUT)
 last = -1
